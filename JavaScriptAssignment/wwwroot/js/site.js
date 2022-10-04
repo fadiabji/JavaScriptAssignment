@@ -18,32 +18,27 @@ const getinputyear = () => {
     let year = document.getElementById("inputyear").value; 
     document.getElementById("inputyear").innerHTML = year; 
     console.log(year);
-    document.getElementById("yearoutput").innerHTML = leapyear();
+    document.getElementById("yearoutput").innerHTML = leapyear(year);
 }
-function leapyear() {
-    if (getinputyear % 4 == 0) {
-        if (getinputyear % 100 == 0) {
-            if (getinputyear % 400 == 0) {
-                return "It is leap year"
-            } else {
-                return "not leap year"
+function leapyear(year) {
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                return "The year is a leap year"
             }
-        } else {
-            return "It is leap year"
+            else {
+                return "The year is not a leap year";
+            }
+        }
+        else
+        {
+            return "The year is a leap year"
         }
 
-    } else {
-        return "not leap year"
+        }
+        else
+        {
+        return "The year is not a leap year"
+        }
     }
-}
 
-//function leapyear(getinputyear) {
-//    return ((getinputyear % 4 == 0) && (getinputyear % 100 != 0)) || (getinputyear % 400 == 0);
-//}
-
-//To determine whether a year is a leap year, follow these steps:
-//If the year is evenly divisible by 4, go to step 2. Otherwise, go to step 5.
-//If the year is evenly divisible by 100, go to step 3. Otherwise, go to step 4.
-//If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
-//The year is a leap year(it has 366 days).
-//The year is not a leap year(it has 365 days).
